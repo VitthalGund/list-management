@@ -40,13 +40,13 @@ The project is built using Node.js, Express.js, and MongoDB, with optional featu
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/VitthalGund/list-management.git
     ```
 
 2. Install dependencies:
 
     ```bash
-    cd <project-directory>
+    cd list-management-main
     npm install
     ```
 
