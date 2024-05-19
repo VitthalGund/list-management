@@ -67,9 +67,126 @@ The project is built using Node.js, Express.js, and MongoDB, with optional featu
     npm start
     ```
 
-## API Documentation 📖
+# 📋 API Documentation 🚀
 
-For detailed API documentation and usage examples, refer to the [Postman Documentation](<link-to-postman-documentation>).
+## List Endpoints 📝
+
+### Create List
+- **POST** `/lists`
+  - Create a new list with a title and custom properties.
+  - **Request Body**:
+    ```json
+    {
+      "title": "My List",
+      "properties": [
+        {
+          "title": "Custom Property 1",
+          "defaultValue": "Default Value"
+        },
+        {
+          "title": "Custom Property 2",
+          "defaultValue": "Default Value"
+        }
+      ]
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "id": "list-id",
+      "title": "My List",
+      "properties": [
+        {
+          "title": "Custom Property 1",
+          "defaultValue": "Default Value"
+        },
+        {
+          "title": "Custom Property 2",
+          "defaultValue": "Default Value"
+        }
+      ]
+    }
+    ```
+
+### Add User to List
+- **POST** `/lists/:listId/users`
+  - Add a user to the specified list via CSV upload.
+  - **Request Body**: CSV file with headers (name, email, custom properties)
+  - **Response**:
+    ```json
+    {
+      "success": true,
+      "message": "Users added successfully.",
+      "totalUsersAdded": 10,
+      "totalUsersNotAdded": 2,
+      "totalUsersInList": 25
+    }
+    ```
+
+## User Endpoints 👤
+
+### Get All Users
+- **GET** `/users`
+  - Retrieve all users.
+  - **Response**:
+    ```json
+    [
+      {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "customProperty1": "Value 1",
+        "customProperty2": "Value 2"
+      },
+      {
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "customProperty1": "Value 3",
+        "customProperty2": "Value 4"
+      }
+    ]
+    ```
+
+### Get User by ID
+- **GET** `/users/:userId`
+  - Retrieve a user by ID.
+  - **Response**:
+    ```json
+    {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "customProperty1": "Value 1",
+      "customProperty2": "Value 2"
+    }
+    ```
+
+## Email Endpoints 📧
+
+### Send Email to List
+- **POST** `/email/send/:listId`
+  - Send an email to all users on the specified list.
+  - **Request Body**:
+    ```json
+    {
+      "subject": "Your Subject",
+      "body": "Your Email Body"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "success": true,
+      "message": "Email sent successfully."
+    }
+    ```
+
+## Error Handling 🛠️
+
+- The API handles various error states such as:
+  - Duplicate emails
+  - Missing data
+  - Invalid CSV formats
+- Detailed error messages and responses are provided for each error scenario.
+
 
 ## Folder Structure 📂
 
