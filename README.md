@@ -27,7 +27,7 @@ The project is built using Node.js, Express.js, and MongoDB, with optional featu
 
 - **Error Handling**: The application handles various error states such as duplicate emails, missing data, and invalid CSV formats. It provides detailed error messages and responses.
 
-## Tech Stack ⚙️
+## ⚙️ Tech Stack 
 
 - Node.js
 - Express.js
@@ -35,7 +35,7 @@ The project is built using Node.js, Express.js, and MongoDB, with optional featu
 - Nodemailer (optional)
 - Message Queue (optional)
 
-## Installation 🛠️
+## 🛠️ Installation 
 
 1. Clone the repository:
 
@@ -56,9 +56,9 @@ The project is built using Node.js, Express.js, and MongoDB, with optional featu
 
     ```plaintext
     PORT=3000
-    MONGODB_URI=<your-mongodb-uri>
-    EMAIL_USER=<your-email-user>
-    EMAIL_PASS=<your-email-password>
+    MONGODB_URI=your-mongodb-uri
+    EMAIL_USER=your-email-user
+    EMAIL_PASS=your-email-password
     ```
 
 4. Start the server:
